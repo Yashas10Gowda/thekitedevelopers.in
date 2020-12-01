@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Kite Developers</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<section id="header">
+		<header>
+			<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+			<h1 id="logo"><a href="#">Kite Developers</a></h1>
+			<p>Minding Your Business</p>
+		</header>
+		<nav id="nav">
+			<ul>
+				<li><a href="#one" class="active">About</a></li>
+				<li><a href="#two">Things I Can Do</a></li>
+				<li><a href="#four">Contact Us</a></li>
+			</ul>
+		</nav>
+		<footer>
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+		</footer>
+	</section>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- One -->
+			<section id="one">
+				<!-- <div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div> -->
+				<div class="container">
+					<header class="major">
+						<h2>My Site</h2>
+						<p>is designed to show you the exact systems. What service
+							will help you grow your business.</p>
+					</header>
+					<h4>But not how??</h4>
+					<p>The brutal truth is - <span style="color: #4acaa8;">Willpower</span> is limited. Simply trying
+						hard doesn’t work. Neither will help you persuade your passion.
+						<br></p>
+					<h4>This is why a business developer is essential in your business.</h4>
+
+					<p>We believe that awareness of business culture is getting far beyond
+						cold calling and get-rich schemes, We are in the era where
+						businesses try to build connections that make a sale.
+						Business development is the link that you are missing, the link
+						between internal (marketing, sales,..... etc) and external (potential
+						partnership, client, new opportunities,...etc).</p>
+				</div>
+			</section>
+
+			<!-- Two -->
+			<section id="two">
+				<div class="container">
+					<h3>Things I Can Do</h3>
+					<p>If you’ve made this far…….. Thank you
+						<br>
+						Seriously, I deeply value every relationship.
+						I’ve been lucky enough to build one with you.
+					</p>
+					<h4>Have a question about...</h4>
+					<br>
+					<ul class="feature-icons">
+						<li class="icon solid fa-clipboard">Copywriting</li>
+						<li class="icon solid fa-list-ol">SEO</li>
+						<li class="icon solid fa-bolt">Design</li>
+						<li class="icon solid fa-rocket">Sales</li>
+						<p>... and other stuff as to how it is going to improve your business. <a href="#four"
+								style="font-size: 25px;display: inline-block;" class="primary">Contact Us</a></p>
+					</ul>
+				</div>
+			</section>
+
+			<!-- Four -->
+			<section id="four">
+				<div class="container">
+					<h3>Contact Us</h3>
+					<p>Don’t have a step-motherly feeling to fill this form.<br>All you need is just a link between
+						you and a huge mass of
+						audience waiting to take your offer…
+						Let’s do it together.
+					</p>
+					<form id="submitform">
+						<div class="row gtr-uniform">
+							<div class="col-6 col-12-xsmall"><input type="text" name="fname" id="fname"
+									placeholder="First Name" required /></div>
+							<div class="col-6 col-12-xsmall"><input type="text" name="lname" id="lname"
+									placeholder="Last Name" required /></div>
+							<div class="col-12"><input type="email" name="email" id="email" placeholder="Email-Id"
+									required />
+							</div>
+							<div class="col-12"><input type="number" name="phone" id="phone"
+									placeholder="Contact Number" required /></div>
+							<div class="col-12">
+								<ul class="actions">
+									<li><input type="submit" class="primary" value="Submit" /></li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="container">
+				<ul class="copyright">
+					<li>&copy; Kite Developers. All rights reserved.</li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		const submitform = document.getElementById('submitform')
+		submitform.addEventListener('submit', function (e) {
+			e.preventDefault();
+			console.log(e.target);
+			localStorage.setItem('Submitted', 'true')
+		})
+	</script>
+
+</body>
+
+</html>
