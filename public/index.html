@@ -18,7 +18,7 @@
 	<!-- Header -->
 	<section id="header">
 		<header>
-			<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+			<span class="image avatar"><img src="images/kite-logo.png" alt="" /></span>
 			<h1 id="logo"><a href="#">Kite Developers</a></h1>
 			<p>Minding Your Business</p>
 		</header>
@@ -31,11 +31,12 @@
 		</nav>
 		<footer>
 			<ul class="icons">
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-				<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				<li><a target="_blank" href="https://www.facebook.com/kitedevelopers/"
+						class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a target="_blank" href="https://www.instagram.com/kite_developers/"
+						class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="https://wa.me/09008841263" class="icon brands fa-whatsapp"><span
+							class="label">WhatsApp</span></a></li>
 			</ul>
 		</footer>
 	</section>
@@ -144,13 +145,44 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
 	<script>
-		const submitform = document.getElementById('submitform')
+		var firebaseConfig = {
+			apiKey: "AIzaSyBCCxr-3AbcptuAbr6l7H5WatNLk9wkd1E",
+			authDomain: "kitedevelopers-3a5c9.firebaseapp.com",
+			databaseURL: "https://kitedevelopers-3a5c9.firebaseio.com",
+			projectId: "kitedevelopers-3a5c9",
+			storageBucket: "kitedevelopers-3a5c9.appspot.com",
+			messagingSenderId: "753138751717",
+			appId: "1:753138751717:web:74154a3de5b04983c11c0c",
+			measurementId: "G-XE1ES8HHP9"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		var db = firebase.firestore();
+	</script>
+	<script>
+		var submitform = document.getElementById('submitform')
 		submitform.addEventListener('submit', function (e) {
+
 			e.preventDefault();
-			console.log(e.target);
-			localStorage.setItem('Submitted', 'true')
+			var date = new Date();
+
+			db.collection("UsersInfo").doc().set({
+				Email: document.getElementById("email").value,
+				FirstName: document.getElementById("fname").value,
+				LastName: document.getElementById("lname").value,
+				Phone: document.getElementById("phone").value,
+				Time: firebase.firestore.Timestamp.now()
+			}).then(function () {
+				localStorage.setItem('Submitted', 'true')
+				location.replace('/public/checkout.html')
+			}).catch(function () {
+				alert('Sorry An Error Occured.')
+			})
+
+
 		})
 	</script>
 
