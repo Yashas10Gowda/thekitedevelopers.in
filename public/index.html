@@ -176,7 +176,6 @@
 				Phone: document.getElementById("phone").value,
 				Time: firebase.firestore.Timestamp.now()
 			}).then(function () {
-				localStorage.setItem('Submitted', 'true')
 				location.replace('/checkout.html')
 			}).catch(function () {
 				alert('Sorry An Error Occured.')
