@@ -150,18 +150,16 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
 	<script>
 		var firebaseConfig = {
-			apiKey: "AIzaSyBCCxr-3AbcptuAbr6l7H5WatNLk9wkd1E",
-			authDomain: "kitedevelopers-3a5c9.firebaseapp.com",
-			databaseURL: "https://kitedevelopers-3a5c9.firebaseio.com",
-			projectId: "kitedevelopers-3a5c9",
-			storageBucket: "kitedevelopers-3a5c9.appspot.com",
-			messagingSenderId: "753138751717",
-			appId: "1:753138751717:web:74154a3de5b04983c11c0c",
-			measurementId: "G-XE1ES8HHP9"
+			apiKey: "AIzaSyDvdPnjOd3XUzbape8JpB0yoHFZdCWX2Vk",
+			authDomain: "thekitedevelopers.firebaseapp.com",
+			projectId: "thekitedevelopers",
+			storageBucket: "thekitedevelopers.appspot.com",
+			messagingSenderId: "893396117695",
+			appId: "1:893396117695:web:70875aa347192828ae7e0a"
 		};
 		// Initialize Firebase
 		firebase.initializeApp(firebaseConfig);
@@ -174,7 +172,7 @@
 			e.preventDefault();
 			var date = new Date();
 
-			db.collection("UsersInfo").doc().set({
+			db.collection("UserInfo").doc().set({
 				Email: document.getElementById("email").value,
 				FirstName: document.getElementById("fname").value,
 				LastName: document.getElementById("lname").value,
