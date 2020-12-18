@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
-        @import url("/assets/css/fontawesome-all.min.css");
+        @import url("/public/assets/css/fontawesome-all.min.css");
         @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
@@ -18,13 +18,11 @@
 
         body {
             font-family: 'Lato', sans-serif;
-            position: absolute;
-            left: 50%;
-            top: 50%;
+            position: relative;
             max-width: 700px !important;
-            max-height: 100% !important;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
+            margin: auto !important;
+            color: #777777;
+            background-color: #f1f1f1;
         }
 
         .high {
@@ -76,7 +74,31 @@
     </style>
 </head>
 
-<body style="color: #777777;background-color: #f1f1f1;">
+<body>
+    <!-- Test Modal -->
+    <div id="id01" class="w3-modal">
+        <div style="max-width: 700px;" class="w3-modal-content w3-card-4 w3-animate-bottom w3-border w3-border-black">
+            <span class="w3-display-topright w3-text-black"><i class="icon solid fa-times w3-margin"></i></span>
+            <br>
+            <div class="w3-container w3-left-align w3-large w3-text-black">
+                <p><b>Do you want 49 meme templates that adds fire to your business
+                        instantly?<br>
+                        <span class="w3-text-red">It's FREE!</span></p></b>
+                <form id="submitform">
+                    <label class="w3-text-black" for="email"><b>Email</b></label>
+                    <input style="outline: none;" required placeholder="Enter your Email to get it."
+                        class="w3-input w3-border w3-border-black" id="email" type="email">
+                    <button type="submit" id="submit" style="outline: none;"
+                        class="w3-btn w3-black w3-large w3-section w3-block">Submit</button>
+                </form><br>
+            </div>
+            <footer class="w3-container w3-black">
+                <p class="w3-medium w3-center">NOTE: Check your Email only after you finish reading this
+                    letter.</p>
+            </footer>
+        </div>
+    </div>
+    <!-- Test Modal -->
     <div class="w3-container w3-large w3-white w3-round-xlarge">
         <p><b><br>
                 <div class="w3-center"><img width="325" src="images/helloworld.jpg" alt=""></div>
@@ -830,6 +852,35 @@
             <div class="w3-center"><img width="325" src="images/send2.png" alt=""></div>
         </b>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-firestore.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyDvdPnjOd3XUzbape8JpB0yoHFZdCWX2Vk",
+            authDomain: "thekitedevelopers.firebaseapp.com",
+            projectId: "thekitedevelopers",
+            storageBucket: "thekitedevelopers.appspot.com",
+            messagingSenderId: "893396117695",
+            appId: "1:893396117695:web:70875aa347192828ae7e0a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+        setTimeout(function () {
+            document.getElementById('id01').style.display = 'block';
+        }, 4000)
+        var submitform = document.getElementById('submitform')
+        submitform.addEventListener('submit', function (e) {
+            e.preventDefault()
+            db.collection('CheckoutEmail').doc().set({
+                email: document.getElementById('email').value,
+                Time: firebase.firestore.Timestamp.now()
+            }).then(function () {
+                document.getElementById('id01').style.display = 'none';
+            })
+        })
+    </script>
 </body>
 
 </html>
